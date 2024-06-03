@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, TextInput, StyleSheet, Text } from 'react-native';
+import { View, TextInput, StyleSheet, Text,TouchableOpacity } from 'react-native';
 
 
 
@@ -14,6 +14,9 @@ export default function DonationsScreen() {
       keyboardType="numeric"
       onChangeText={setValue}
     />
+    <TouchableOpacity style={styles.button} >
+      <Text style={styles.buttonText}>Submit</Text>
+    </TouchableOpacity>
   </View>
   );
 }
@@ -47,5 +50,20 @@ const styles = StyleSheet.create({
     marginTop: 5,
     fontSize: 14,
     color: 'red',
+  },
+
+  button: {
+    backgroundColor: '#007BFF',
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    borderRadius: 5,
+    alignItems: 'center',
+    marginTop: 10,
+    width: '80vw',
+  },
+  buttonText: {
+    fontSize: 16,
+    color: '#fff',
+    fontWeight: 'bold',
   },
 });
