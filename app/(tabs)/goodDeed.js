@@ -12,27 +12,21 @@ export default function DonationsScreen() {
   const [value, setValue] = useState(0);
   return (
     <ScrollView>
-    <View style={styles.container}>
-      <Text style={styles.heading}>Ma Liste</Text>
-      <Text style={styles.paragraph}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dictum
-        velit nec sem pulvinar, ac aliquam est fermentum. Integer eget lacinia
-        massa. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
-        posuere cubilia curae; Quisque ac ligula id mauris dignissim dictum non
-        vel justo. Curabitur venenatis justo et sem suscipit, eget tempor urna
-        egestas.
-      </Text>
-      <TextInput
-        style={styles.input}
-        value={value}
-        placeholder="Entrez la valeur du don"
-        keyboardType="numeric"
-        onChangeText={setValue}
-      />
-      <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>Submit</Text>
-      </TouchableOpacity>
-    </View>
+      <View style={styles.container}>
+        <Text style={styles.heading}>Ma liste</Text>
+        <View style={styles.inputDeed}>
+        <TextInput
+          style={styles.input}
+          value={value}
+          placeholder="Entrez une bonne action"
+          keyboardType='ascii-capable'
+          onChangeText={setValue}
+        />
+        <TouchableOpacity style={styles.button}>
+          <Text style={styles.buttonText}>Ajouter</Text>
+        </TouchableOpacity>
+        </View>
+      </View>
     </ScrollView>
   );
 }
@@ -44,7 +38,10 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-
+  inputDeed: {
+    flexDirection: 'row',
+    
+  },
   label: {
     fontSize: 16,
     fontWeight: "bold",
@@ -73,7 +70,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     borderRadius: 5,
     alignItems: "center",
-    marginTop: 10,
+    marginLeft: 10,
     width: "80vw",
   },
   buttonText: {
@@ -83,16 +80,16 @@ const styles = StyleSheet.create({
   },
   heading: {
     fontSize: 28,
-    fontWeight: 'bold',
-    color: '#333',
+    fontWeight: "bold",
+    color: "#333",
     marginBottom: 20,
   },
   paragraph: {
     fontSize: 16,
-    color: '#666',
+    color: "#666",
     lineHeight: 24,
     marginBottom: 15,
-    textAlign: 'justify',
-    margin: 15
+    textAlign: "justify",
+    margin: 15,
   },
 });
